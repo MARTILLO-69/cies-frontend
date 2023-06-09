@@ -1,0 +1,74 @@
+import axios from 'axios';
+
+const BASE_URL = 'http://localhost:4000/api';
+
+export async function registrar(producto_id, proveedor_id, cantidad_reabastecida, fecha_reabastecimiento, costo_total) {
+    try {
+        //formData.append('imagen', imagen); //crea folder es especifico -> para lo que quiero productos 
+        const response = await axios.post(`${BASE_URL}/reabastecer/registrar`, {producto_id, proveedor_id, cantidad_reabastecida, fecha_reabastecimiento, costo_total});
+        return response.data;
+    }
+    catch (error) {
+        throw error;
+    }
+}
+export async function actualizar(id_reabastecimiento, producto_id,proveedor_id, cantidad_reabastecida, fecha_reabastecimiento , costo_total) {
+    try {
+        const response = await axios.put(`${BASE_URL}/reabastecer/actualizar/${id_reabastecimiento}`, { producto_id,proveedor_id, cantidad_reabastecida, fecha_reabastecimiento , costo_total });
+        return response.data;
+    }
+    catch (error) {
+        throw error;
+    }
+
+}
+
+export async function eliminar(id_reabastecimiento) {
+    try {
+        const response = await axios.put(`${BASE_URL}/reabastecer/eliminar/${id_reabastecimiento}`);
+        return response.data;
+    }
+    catch (error) {
+        throw error;
+    }
+}
+
+export async function eliminarVarios(ids) {
+    try {
+        const response = await axios.put(`${BASE_URL}/reabastecer/eliminarVarios`, {ids});
+        return response.data;
+    }
+    catch (error) {
+        throw error;
+    }
+}
+
+export async function listarProveedores(){
+    try {
+        const response = await axios.get(`${BASE_URL}/reabastecer/proveedores`);
+        return response.data;
+    }
+    catch(error){
+        throw error;
+    }
+}
+
+export async function listarProductos(){
+    try {
+        const response = await axios.get(`${BASE_URL}/reabastecer/productos`);
+        return response.data;
+    }
+    catch(error){
+        throw error;
+    }
+}
+
+export async function listarReabasteci(){
+    try {
+        const response = await axios.get(`${BASE_URL}/reabastecer/`);
+        return response.data;
+    }
+    catch(error){
+        throw error;
+    }
+}
