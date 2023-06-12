@@ -13,6 +13,16 @@ export async function listarVentas(){
     }
 }
 
+export async function listarPacientes(){
+    try {
+        const response = await axios.get(`${BASE_URL}/ventas/pacientes`);
+        return response.data;
+    }
+    catch(error){
+        throw error;
+    }
+}
+
 export async function listarMedicamentos(){
     try {
         const response = await axios.get(`${BASE_URL}/ventas/medicamentos`);
@@ -24,9 +34,9 @@ export async function listarMedicamentos(){
 }
 
 //lo que hara es registrar nuevos ventas con sus datos correcpondientes
-export async function registrar(id_medicamento, cantidad_vendida, fecha_venta, total_venta) {
+export async function registrar(id_medicamento, cantidad_vendida, paciente_id, fecha_venta, total_venta) {
     try {
-        const response = await axios.post(`${BASE_URL}/ventas/registrar`, {id_medicamento, cantidad_vendida, fecha_venta, total_venta});
+        const response = await axios.post(`${BASE_URL}/ventas/registrar`, {id_medicamento, cantidad_vendida,paciente_id, fecha_venta, total_venta});
         return response.data;
     }
     catch(error){
@@ -35,9 +45,9 @@ export async function registrar(id_medicamento, cantidad_vendida, fecha_venta, t
 }
 
 //actualizara los ventas que no esten bien registrados 
-export async function actualizar(id_venta,id_medicamento, cantidad_vendida, fecha_venta, total_venta ){
+export async function actualizar(id_venta,id_medicamento, cantidad_vendida,paciente_id, fecha_venta, total_venta ){
     try {
-        const response = await axios.put(`${BASE_URL}/ventas/modificar/${id_venta}`,{id_medicamento, cantidad_vendida, fecha_venta, total_venta});
+        const response = await axios.put(`${BASE_URL}/ventas/modificar/${id_venta}`,{id_medicamento, cantidad_vendida, fecha_venta,paciente_id, total_venta});
         return response.data;
     }
     catch(error){

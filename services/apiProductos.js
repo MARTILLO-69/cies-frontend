@@ -14,6 +14,17 @@ export async function listarProductos(){
     }
 }
 
+//listara todos los productos que no esten disponibles o eliminados
+export async function listarNoProductos(){
+    try {
+        const response = await axios.get(`${BASE_URL}/productos/no`);
+        return response.data;
+    }
+    catch(error){
+        throw error;
+    }
+}
+
 //listara las diferentes categorias a las que puede pertenecer el producto o medicamneto
 export async function listarCategorias(){
     try {
@@ -85,6 +96,28 @@ export async function eliminar(id_medicamento){
 export async function eliminarVarios(ids){
     try {
         const response = await axios.put(`${BASE_URL}/productos/eliminarProductos`,{ids});
+        return response.data;
+    }
+    catch(error){
+        throw error;
+    }
+}
+
+//retornara o cambiara el estado de inactivo a activo de un producto en especifico 
+export async function retornar(id_medicamento){
+    try {
+        const response = await axios.put(`${BASE_URL}/productos/regresar/${id_medicamento}`);
+        return response.data;
+    }
+    catch(error){
+        throw error;
+    }
+}
+
+//retornara o cambiara el estado de inactivo a activo de varios productos
+export async function retornarVarios(ids){
+    try {
+        const response = await axios.put(`${BASE_URL}/productos/regresarProductos`,{ids});
         return response.data;
     }
     catch(error){

@@ -486,11 +486,22 @@ const Productos = () => {
 
                         <div className="field">
                             <label htmlFor="proveedores">Proveedores</label>
-                            <Dropdown id='proveedor_id' value={proveedor} onChange={(e) => setProveedor(e.value)} options={proveedoresDropdown} placeholder='Seleccione un Proveedor' filterPlaceholder='Buscar Proveedores' filter/>
+                            <Dropdown 
+                                id='proveedor_id' 
+                                value={proveedor} 
+                                onChange={(e) => setProveedor(e.value)} 
+                                options={proveedoresDropdown} 
+                                placeholder='Seleccione un Proveedor' 
+                                filterPlaceholder='Buscar Proveedores' 
+                                filter/>
                         </div>
                         <div className="field">
                             <label htmlFor="categoria">Categoria Productos</label>
-                            <Dropdown id='categoria_id' value={categoria} onChange={(e) => setCategoria(e.value)} options={categoriasDropdown} placeholder='Seleccione Categoria del Producto' filterPlaceholder='Buscar Catergoria' filter/>
+                            <Dropdown 
+                            id='categoria_id' 
+                            value={categoria} 
+                            onChange={(e) => setCategoria(e.value)} 
+                            options={categoriasDropdown} placeholder='Seleccione Categoria del Producto' filterPlaceholder='Buscar Catergoria' filter/>
                         </div>
 
                         <div className="formgrid grid">

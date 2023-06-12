@@ -34,7 +34,7 @@ const AppMenu = () => {
                         { label: 'Nueva categoria', icon: 'pi pi-fw pi-plus', to: '/farmproductos/categoriasProductos/nuevaCategoria' },
                         { label: 'Nuevo producto', icon: 'pi pi-fw pi-plus', to: '/farmproductos/nuevoProducto' },
                         { label: 'Actualizar producto', icon: 'pi pi-fw pi-pencil', to: '/farmproductos' },
-                        { label: 'Listar productos', icon: 'pi pi-fw pi-list', to: '/farmproductos/listarProductos' }
+                        { label: 'Listar productos inactivos', icon: 'pi pi-fw pi-list', to: '/farmproductos/listarProductos' }
                     ]
                 },
                 {
@@ -43,7 +43,7 @@ const AppMenu = () => {
                     items: [
                         { label: 'Nuevo proveedor', icon: 'pi pi-fw pi-plus', to: '/farmproveedores/nuevoProveedor' },
                         { label: 'Actualizar proveedor', icon: 'pi pi-fw pi-pencil', to: '/farmproveedores' },
-                        { label: 'Listar proveedores', icon: 'pi pi-fw pi-list', to: '/farmproveedores/listarProveedores' }
+                        { label: 'Listar proveedores inactivos', icon: 'pi pi-fw pi-list', to: '/farmproveedores/listarProveedores' }
                     ]
                 },
                 {
@@ -52,6 +52,7 @@ const AppMenu = () => {
                     items: [
                         { label: 'Nuevo reabastecimiento', icon: 'pi pi-fw pi-plus', to: '/farmreabastecimiento/nuevoReabaste' },
                         { label: 'Actualizar reabastecimiento', icon: 'pi pi-fw pi-pencil', to: '/farmreabastecimiento' },
+                        { label: 'Listar reabastecimiento inactivos', icon: 'pi pi-fw pi-pencil', to: '/farmreabastecimiento/listarProveedores' },
                     ]
                 },
                 {

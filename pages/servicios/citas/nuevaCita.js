@@ -13,10 +13,12 @@ export default function ReservaCitas() {
 
 
     const toast = useRef(null);
+
     const [paciente, setPaciente] = useState([]);
     const [pacientes, setPacientes] = useState([]);
     const [filteredPacientes, setFilteredPacientes] = useState([]);
     const [selectedPaciente, setSelectedPaciente] = useState(null);
+    
     const [categorias, setCategorias] = useState([]);
     const [categoria, setCategoria] = useState(null);
     const [categoriasDropdown, setCategoriasDropdown] = useState([]);
