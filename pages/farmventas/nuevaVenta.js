@@ -32,7 +32,7 @@ export const NuevaVenta = () => {
 
 
     async function registrarVenta() {
-        /*if (listboxValueM.id_mediamento != null &&
+        /*if (listboxValueM.id_mediamento != null && 77validacion
             venta.cantidad_vendida > 0 &&
             venta.fecha_venta != "" &&
             venta.total_venta > 0

@@ -43,6 +43,26 @@ export async function eliminarVarios(ids) {
     }
 }
 
+export async function retornar(id) {
+    try {
+        const response = await axios.put(`${BASE_URL}/reabastecer/regresar/${id}`);
+        return response.data;
+    }
+    catch (error) {
+        throw error;
+    }
+}
+
+export async function retornarVarios(ids) {
+    try {
+        const response = await axios.put(`${BASE_URL}/reabastecer/regresarVarios`, {ids});
+        return response.data;
+    }
+    catch (error) {
+        throw error;
+    }
+}
+
 export async function listarProveedores(){
     try {
         const response = await axios.get(`${BASE_URL}/reabastecer/proveedores`);
@@ -66,6 +86,15 @@ export async function listarProductos(){
 export async function listarReabasteci(){
     try {
         const response = await axios.get(`${BASE_URL}/reabastecer/`);
+        return response.data;
+    }
+    catch(error){
+        throw error;
+    }
+}
+export async function listarNoReabasteci(){
+    try {
+        const response = await axios.get(`${BASE_URL}/reabastecer/no`);
         return response.data;
     }
     catch(error){

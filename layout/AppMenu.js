@@ -52,7 +52,7 @@ const AppMenu = () => {
                     items: [
                         { label: 'Nuevo reabastecimiento', icon: 'pi pi-fw pi-plus', to: '/farmreabastecimiento/nuevoReabaste' },
                         { label: 'Actualizar reabastecimiento', icon: 'pi pi-fw pi-pencil', to: '/farmreabastecimiento' },
-                        { label: 'Listar reabastecimiento inactivos', icon: 'pi pi-fw pi-pencil', to: '/farmreabastecimiento/listarProveedores' },
+                        { label: 'Listar reabastecimientos inactivos', icon: 'pi pi-fw pi-list', to: '/farmreabastecimiento/listarReabastecimiento' },
                     ]
                 },
                 {

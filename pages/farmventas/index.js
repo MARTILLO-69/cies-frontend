@@ -207,6 +207,14 @@ const Ventas = () => {
             </>
         );
     };
+    const pacienteBodyTemplate = (rowData) => {
+        return (
+            <>
+                <span className="p-column-title">Cantidad</span>
+                {rowData.nombres}
+            </>
+        );
+    };
     const fechaBodyTemplate = (rowData) => {
         return (
             <>
@@ -391,6 +399,7 @@ const Ventas = () => {
                         <Column field="code" header="ID" sortable body={idBodyTemplate} headerStyle={{ minWidth: '5rem' }}></Column>
                         <Column field="nombre_mediamento" header="Nombre Producto" sortable body={nombreBodyTemplate} headerStyle={{ minWidth: '15rem' }}></Column>
                         <Column field="cantidad_vendida" header="Cantidad Vendida" body={cantidadBodyTemplate} sortable></Column>
+                        <Column field="nombre_mediamento" header="Nombre Paciente" sortable body={pacienteBodyTemplate} headerStyle={{ minWidth: '15rem' }}></Column>
                         <Column field="fecha_venta" header="Fecha Venta" sortable body={fechaBodyTemplate} headerStyle={{ minWidth: '10rem' }}></Column>
                         <Column field="total_venta" header="Total Venta" body={precioBodyTemplate} sortable headerStyle={{ minWidth: '10rem' }}></Column>
                         <Column body={actionBodyTemplate} headerStyle={{ minWidth: '10rem' }}></Column>
